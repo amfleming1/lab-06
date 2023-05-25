@@ -11,12 +11,13 @@ parentForSales.appendChild(salesdataElement);
 
 let hoursArray = ['7am','8am', '9am', '10am', '11am', '12pm','1pm','2pm', '3pm,', '4pm', '5pm', '6pm', '7pm']
 
-let seattleObject = {
-    location: 'Seattle',
-    min: 23,
-    max: 65,
-    avg: 6.3,
+function Location(location, min, max, avg) {
+    this.min = min;
+    this.max = max;
+    this. avg = avg;
+    this.location = location;
 }
+let seattleObject = new Location("Seattle", 23, 65, 2.3);
 
 let tokyoObject = {
     location: 'Tokyo',
