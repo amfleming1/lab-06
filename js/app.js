@@ -14,38 +14,18 @@ let hoursArray = ['7am','8am', '9am', '10am', '11am', '12pm','1pm','2pm', '3pm,'
 function Location(location, min, max, avg) {
     this.min = min;
     this.max = max;
-    this. avg = avg;
+    this.avg = avg;
     this.location = location;
 }
 let seattleObject = new Location("Seattle", 23, 65, 2.3);
 
-let tokyoObject = {
-    location: 'Tokyo',
-    min: 3,
-    max: 24,
-    avg: 1.2,
-}
+let tokoyoObject = new Location("Tokyo", 3, 24, 1.2);
 
-let dubaiObject = {
-    location: 'Dubai',
-    min: 11,
-    max: 38,
-    avg: 3.7,
-}
+let dubaiObject = new Location("Dubai", 11, 38, 3.7);
 
-let parisObject = {
-    location: 'Paris',
-    min: 20,
-    max: 38,
-    avg: 2.3,
-}
+let parisObject = new Location("Paris", 20, 38, 2.3);
 
-let limaObject = {
-    location: 'Lima',
-    min: 2,
-    max: 16,
-    avg: 4.6,
-}
+let limaObject = new Location("Lima", 2, 16, 4.6);
 
 
 let storesArray = [seattleObject, tokyoObject, dubaiObject, parisObject, limaObject]
@@ -83,4 +63,11 @@ for (let store of storesArray) {
     parent.appendChild(subTotalElement)
     console.log(store);
 }
+
+//target a parent element
+//create header row by looping through the hoursArray
+//loop through storesArray
+//create a row for each store
+
+let parent1 = document.createElement("")
 
