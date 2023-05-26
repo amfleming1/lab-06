@@ -17,9 +17,18 @@ function Location(location, min, max, avg) {
     this.avg = avg;
     this.location = location;
 }
+Location.prototype.render = function() {
+    let root = document.getElementById("sales-data");
+    let seattle = `${this.avg}`
+    let pElm = document.createElement ("p");
+     pElm.textContent = seattle;
+    root.appendChild(pElm);
+
+}
+
 let seattleObject = new Location("Seattle", 23, 65, 2.3);
 
-let tokoyoObject = new Location("Tokyo", 3, 24, 1.2);
+let tokyoObject = new Location("Tokyo", 3, 24, 1.2);
 
 let dubaiObject = new Location("Dubai", 11, 38, 3.7);
 
@@ -27,6 +36,11 @@ let parisObject = new Location("Paris", 20, 38, 2.3);
 
 let limaObject = new Location("Lima", 2, 16, 4.6);
 
+seattleObject.render();
+tokyoObject.render();
+dubaiObject.render();
+parisObject.render();
+limaObject.render();
 
 let storesArray = [seattleObject, tokyoObject, dubaiObject, parisObject, limaObject]
 
@@ -64,10 +78,10 @@ for (let store of storesArray) {
     console.log(store);
 }
 
-//target a parent element
+// target a parent element
 //create header row by looping through the hoursArray
 //loop through storesArray
 //create a row for each store
 
-let parent1 = document.createElement("")
+
 
