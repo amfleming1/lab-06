@@ -19,10 +19,10 @@ function Location(location, min, max, avg) {
 }
 Location.prototype.render = function() {
     let root = document.getElementById("sales-data");
-    let seattle = `${this.avg}`
-    let pElm = document.createElement ("p");
-     pElm.textContent = seattle;
-    root.appendChild(pElm);
+    let location = `${this.location}`
+    let storeNameElm = document.createElement ("td");
+    storeNameElm.textContent = location;
+    root.appendChild(storeNameElm);
 
 }
 
@@ -77,6 +77,25 @@ for (let store of storesArray) {
     parent.appendChild(subTotalElement)
     console.log(store);
 }
+
+//  DoughnutDistillery.prototype.render = function() {
+//     let root = document.getElementById("sales-data");
+//     let storeDataElem = document.createElement("tr");
+
+//     let storeNameElm = document.createElement("td");
+//     storeNameElm.textContent = this.name;
+//     storeDataElem.appendChild(storeNameElm);
+
+//     for (let sales of this.hourlyDoughnuts) {
+//         let salesElm = document.createElement("td");
+//         salesElm.textContent = `${sales}`;
+//         storeDataElem.appendChild(salesElm);
+//     }
+// root.appendChild(storeDataElm);
+
+//}
+
+
 
 // target a parent element
 //create header row by looping through the hoursArray
