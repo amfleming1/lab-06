@@ -1,11 +1,3 @@
-console.log('Hello World')
-let parentForSales = document.getElementById("sales-data");
-console.log(parentForSales)
-let salesdataElement = document.createElement("p");
-console.log(salesdataElement)
-salesdataElement.textContent = 'Sales Info'
-console.log(salesdataElement)
-parentForSales.appendChild(salesdataElement);
 
 "use strict";
 
@@ -17,6 +9,7 @@ function Location(location, min, max, avg) {
     this.avg = avg;
     this.location = location;
 }
+
 Location.prototype.render = function() {
     let root = document.getElementById("sales-data");
     let location = `${this.location}`
@@ -77,6 +70,64 @@ for (let store of storesArray) {
     parent.appendChild(subTotalElement)
     console.log(store);
 }
+
+let tableElement = document.getElementById("sales");
+let headingRow = document.getElementById("heading-row");
+let headingRowElement = document.createElement("tr");
+
+for (let i = 0; i < hours.length; i++) {
+  let tableDataElement = document.createElement("td");
+  tableDataElement.textContent = hours[i];
+  headingRow.appendChild(tableDataElement);
+}
+
+let tableDataElement2 = document.createElement("td");
+tableDataElement2.textContent = "Daily Location Total";
+headingRow.appendChild(tableDataElement2);
+
+for (let store of storesArray) {
+    let bodyRowElement = document.createElement("tr");
+    let tableDataElement3 = document.createElement("td");
+    tableDataElement3.textContent = store.store;
+    bodyRowElement.appendChild(tableDataElement3);
+  
+    for (let i = 0; i < store.salesPerHour.length; i++) {
+      let TableData2Element = document.createElement("td");
+      TableData2Element.textContent = store.salesPerHour[i];
+      bodyRowElement.appendChild(TableData2Element);
+    }
+  
+
+    let tableTotalElement = document.createElement("td");
+    tableTotalElement.textContent = store.subTotal;
+    bodyRowElement.appendChild(tableTotalElement);
+    tableElement.appendChild(bodyRowElement);
+  }
+  
+  let trElement = document.createElement("tr");
+  let tdElement = document.createElement("td");
+  tdElement.textContent = "Totals";
+  tableElement.appendChild(trElement);
+  trElement.appendChild(tdElement);
+  
+
+  for (let i = 0; i < hours.length; i++) {
+    let hourlyTotal = 0;
+  
+    for (let j = 0; j < storesArray.length; j++) {
+      hourlyTotal += storesArray[j].salesPerHour[i];
+      finalTotal += hourlyTotal;
+    }
+  
+    let dataElement = document.createElement("td");
+    dataElement.textContent = hourlyTotal;
+    trElement.appendChild(dataElement);
+  }
+   
+  let d2Element = document.createElement("td");
+  d2Element.textContent = finalTotal;
+  trElement.appendChild(d2Element);
+  tableElement.appendChild(trElement);
 
 //  DoughnutDistillery.prototype.render = function() {
 //     let root = document.getElementById("sales-data");
