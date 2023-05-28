@@ -129,22 +129,7 @@ for (let store of storesArray) {
   trElement.appendChild(d2Element);
   tableElement.appendChild(trElement);
 
-//  DoughnutDistillery.prototype.render = function() {
-//     let root = document.getElementById("sales-data");
-//     let storeDataElem = document.createElement("tr");
-
-//     let storeNameElm = document.createElement("td");
-//     storeNameElm.textContent = this.name;
-//     storeDataElem.appendChild(storeNameElm);
-
-//     for (let sales of this.hourlyDoughnuts) {
-//         let salesElm = document.createElement("td");
-//         salesElm.textContent = `${sales}`;
-//         storeDataElem.appendChild(salesElm);
-//     }
-// root.appendChild(storeDataElm);
-
-//}
+  formElement.addEventListener("submit", handleSubmit);
 
 
 
