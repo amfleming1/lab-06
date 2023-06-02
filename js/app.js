@@ -29,11 +29,7 @@ let parisObject = new Location("Paris", 20, 38, 2.3);
 
 let limaObject = new Location("Lima", 2, 16, 4.6);
 
-seattleObject.render();
-tokyoObject.render();
-dubaiObject.render();
-parisObject.render();
-limaObject.render();
+
 
 let storesArray = [seattleObject, tokyoObject, dubaiObject, parisObject, limaObject]
 
@@ -70,73 +66,9 @@ for (let store of storesArray) {
     parent.appendChild(subTotalElement)
     console.log(store);
 }
-
-let tableElement = document.getElementById("sales");
-let headingRow = document.getElementById("heading-row");
-let headingRowElement = document.createElement("tr");
-
-for (let i = 0; i < hoursArray.length; i++) {
-  let tableDataElement = document.createElement("td");
-  tableDataElement.textContent = hoursArray[i];
-  headingRow.appendChild(tableDataElement);
-}
-
-let tableDataElement2 = document.createElement("td");
-tableDataElement2.textContent = "Daily Location Total";
-headingRow.appendChild(tableDataElement2);
-
+//Didnt have to put multiple renders! 
+//store.render substituted for multiple locations
 for (let store of storesArray) {
-    let bodyRowElement = document.createElement("tr");
-    let tableDataElement3 = document.createElement("td");
-    tableDataElement3.textContent = store.store;
-    bodyRowElement.appendChild(tableDataElement3);
-  
-    for (let i = 0; i < store.salesPerHour.length; i++) {
-      let TableData2Element = document.createElement("td");
-      TableData2Element.textContent = store.salesPerHour[i];
-      bodyRowElement.appendChild(TableData2Element);
-    }
-  
+ store.render()
 
-    let tableTotalElement = document.createElement("td");
-    tableTotalElement.textContent = store.subTotal;
-    bodyRowElement.appendChild(tableTotalElement);
-    tableElement.appendChild(bodyRowElement);
-  }
-  
-  let trElement = document.createElement("tr");
-  let tdElement = document.createElement("td");
-  tdElement.textContent = "Totals";
-  tableElement.appendChild(trElement);
-  trElement.appendChild(tdElement);
-  
-
-  for (let i = 0; i < hours.length; i++) {
-    let hourlyTotal = 0;
-  
-    for (let j = 0; j < storesArray.length; j++) {
-      hourlyTotal += storesArray[j].salesPerHour[i];
-      finalTotal += hourlyTotal;
-    }
-  
-    let dataElement = document.createElement("td");
-    dataElement.textContent = hourlyTotal;
-    trElement.appendChild(dataElement);
-  }
-   
-  let d2Element = document.createElement("td");
-  d2Element.textContent = finalTotal;
-  trElement.appendChild(d2Element);
-  tableElement.appendChild(trElement);
-
-  formElement.addEventListener("submit", handleSubmit);
-
-
-
-// target a parent element
-//create header row by looping through the hoursArray
-//loop through storesArray
-//create a row for each store
-
-
-
+}
