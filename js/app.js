@@ -75,9 +75,9 @@ let tableElement = document.getElementById("sales");
 let headingRow = document.getElementById("heading-row");
 let headingRowElement = document.createElement("tr");
 
-for (let i = 0; i < hours.length; i++) {
+for (let i = 0; i < hoursArray.length; i++) {
   let tableDataElement = document.createElement("td");
-  tableDataElement.textContent = hours[i];
+  tableDataElement.textContent = hoursArray[i];
   headingRow.appendChild(tableDataElement);
 }
 
