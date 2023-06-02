@@ -25,5 +25,5 @@ alert('Your final price is $[finalPrice}');
 
 
 
-}
+
 
